@@ -15,6 +15,7 @@
     ; Internal libraries
     osemgrep_cli_scan
     osemgrep_cli_ci
+    osemgrep_cli_server
     osemgrep_cli_lsp
     osemgrep_cli_install
     osemgrep_cli_show

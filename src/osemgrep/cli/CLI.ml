@@ -88,6 +88,7 @@ let known_subcommands =
     "scan";
     (* osemgrep-only *)
     "install-ci";
+    "server";
     "show";
     "test";
     "validate";
@@ -144,6 +145,10 @@ let dispatch_subcommand (caps : caps) (argv : string array) =
          *)
         (* partial support, still use Pysemgrep.Fallback in it *)
         | "scan" -> Scan_subcommand.main caps subcmd_argv
+        | "server" ->
+          Server_subcommand.main
+            (caps :> Server_subcommand.caps)
+            subcmd_argv
         (* osemgrep-only: and by default! no need for experimental! *)
         | "lsp" -> Lsp_subcommand.main caps subcmd_argv
         (* | "logout" ->

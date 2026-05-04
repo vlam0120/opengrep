@@ -159,6 +159,7 @@ let tests (caps : Cap.all_caps) =
       Test_scan_subcommand.tests (caps :> Scan_subcommand.caps);
       Unit_test_subcommand.tests (caps :> Test_subcommand.caps);
       Test_show_subcommand.tests (caps :> Show_subcommand.caps);
+      Test_server_subcommand.tests;
       (* Test_publish_subcommand.tests
            (\* = Publish_subcommand.caps + Cap.exec for 'semgrep login' *\)
            (caps :> < Cap.stdout ; Cap.network ; Cap.tmp ; Cap.exec >); *)
