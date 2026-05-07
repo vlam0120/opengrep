@@ -7,7 +7,7 @@
     ; External
     cmdliner
     yojson
-    lwt lwt.unix lwt.preemptive
+    lwt lwt.unix
     cohttp cohttp-lwt-unix
     ; Internal
     commons
