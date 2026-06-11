@@ -87,12 +87,8 @@ open Ast_helper
 (*****************************************************************************)
 let rec parameters body =
   match body with
-  | { pexp_desc = Pexp_fun (Nolabel, _, _, body); _ } ->
-      Nolabel :: parameters body
-  | { pexp_desc = Pexp_fun (Labelled name, _, _, body); _ } ->
-      Labelled name :: parameters body
-  | { pexp_desc = Pexp_fun (Optional name, _, _, body); _ } ->
-      Optional name :: parameters body
+  | { pexp_desc = Pexp_fun (lbl, _, _, inner); _ } ->
+      lbl :: parameters inner
   | _else_ -> []
 
 let name_of_lbl_opt n lbl_opt =
